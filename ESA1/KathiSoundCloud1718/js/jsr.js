@@ -29,6 +29,7 @@ function createListElementForContentItem(item) {
     div.setAttribute("style", "background-image: url('"+item.src +"')");
     console.log(div);
 
+
     //Kasten mit Elementen
     var listBox = document.createElement("div");
     li.appendChild(listBox);
@@ -89,7 +90,8 @@ function createListElementForContentItem(item) {
 }
 
 function refreshContent() {
-   var table=$('#example').DataTable({
-       ajax:"listitems.json"
-    });
+   //var table=$('#example').DataTable({
+     //  ajax:"listitems.json"
+    location.reload();
+    //});
 }

@@ -45,8 +45,8 @@ header *{
     overflow-y: scroll;
     overflow-x: hidden;
     margin-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .img{
@@ -146,10 +146,10 @@ ul{
 li{
     height: 100px;
     font-size: 18px;
-    border-bottom: 2px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
     padding-top: 10px;
     padding-bottom: 0px;
-    padding-left: 0px;
+    padding-left: 10px;
     padding-right: 0px;
 }
 
@@ -204,8 +204,8 @@ li{
     padding-left: 20px;
 }
 .tiles li{
-    width: calc((100% - 10px * 8)/4);
-    margin-left: 10px;
+    width: calc((100% - 20px * 4)/4);
+    margin-left: 5px;
     display: inline-block;
     border-bottom: none;
     position: relative;
@@ -217,22 +217,30 @@ li{
     height: 80px;
     width: 80px;
 }
-.tiles li:before {
+.tiles li::before {
     content: "";
     display: block;
     padding-top: 10%;
 }
-.tiles .options{
-    background-repeat: no-repeat;
-    height: 45px;
-    width: 30px;
+
+.tiles .interactbutton .options{
+    background-image: url("./img/glyphicons/png/glyphicons-518-option-vertical.png");
+    background-size: 15%;
     position: absolute;
-    padding-top : 0px;
-    margin-top: 50px;
-    margin-left: -10px;
+    padding-top: 50px;
 }
+
 .tiles div{
     font-size: 0px;
+}
+.tiles .imageDates{
+    display: none;
+}
+.tiles .mediaTitle{
+    display: none;
+}
+.tiles .tag{
+    display: none;
 }
 .tiles span :not(imgbutton){
     display: none;
@@ -246,6 +254,7 @@ li{
 .tiles .play{
     display: none;
 }
+
 .tiles .thumbnails{
     background-image: url("../css/img/glyphicons/png/glyphicons-115-list.png");
     padding-top: 10px;

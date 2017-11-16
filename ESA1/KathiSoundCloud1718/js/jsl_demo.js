@@ -122,7 +122,8 @@ function onMenueItemSelected(event) {
         refreshContent();
     }
 }
-/*
+
+
 function addItemToList(item){  //bekommt ein JSON übergeben
     console.log("addItemToList(): " , ul);
     console.log("addItemToList(): " +item.title);
@@ -136,4 +137,4 @@ function addItemToList(item){  //bekommt ein JSON übergeben
     newLi.childNodes[1].textContent=item.title;
 
     ul.appendChild(newLi);
-}*/
+}

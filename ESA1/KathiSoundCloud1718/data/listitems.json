@@ -1,23 +1,37 @@
 [
   {
-    "title": "sed",
-    "owner": "lorempixel,com",
+    "title": "Media 1",
+    "owner": "lorempixel.com",
     "added": "15.01.2016",
     "numOfTags": 9,
-    "src": "http://lorempixel.com/200/200"
+    "src": "https://placeimg.com/640/480/any"
   },
   {
-    "title": "adispicing",
-    "owner": "lorempixel,com",
+    "title": "Media 2",
+    "owner": "lorempixel.com",
     "added": "29.02.2016",
     "numOfTags": 0,
-    "src": "http://lorempixel.com/200/150"
+    "src": "https://placeimg.com/640/480/nature"
   },
   {
-    "title": "consectetur",
-    "owner": "lorempixel,com",
-    "added": "29.02.2016",
+    "title": "Media 3",
+    "owner": "lorempixel.com",
+    "added": "17.03.2016",
     "numOfTags": 2,
-    "src": "http://lorempixel.com/150/200"
+    "src": "https://placeimg.com/640/480/animals"
+  },
+  {
+    "title": "Media 4",
+    "owner": "lorempixel.com",
+    "added": "17.03.2016",
+    "numOfTags": 2,
+    "src": "https://placeimg.com/640/480/people"
+  },
+  {
+    "title": "Media 5",
+    "owner": "lorempixel.com",
+    "added": "29.02.2016",
+    "numOfTags": 0,
+    "src": "https://placeimg.com/640/480/tech"
   }
 ]
