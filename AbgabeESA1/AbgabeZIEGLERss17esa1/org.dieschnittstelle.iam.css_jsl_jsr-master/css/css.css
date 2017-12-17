@@ -1,0 +1,310 @@
+html, body {
+    background-color: white;
+    /*background-color: white; Default-Hintergrund*/
+    margin: 0px;
+    font-family: "Arial", sans-serif;
+    color: black;
+    /*Breite und Höhe 100% und nicht scrollbar */
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+/* block text selection */
+* {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+header{
+    position:relative;
+    background-color: rgb(255,255,255);
+    height: 40px;
+    width: 100%;
+    border-bottom: 2px solid rgb(190,190,190);
+    transition: opacity 1s; /*??*/
+    /*box-shadow: 0px 20px 0px lightgrey; /*Schattierung*/
+}
+header h1{
+    font-weight: normal;
+    font-size: 16pt;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    padding-left: 40px;
+    color: black;
+}
+/*header *{
+    display: inline-block;
+    padding-right: 10px;
+}*/
+.content {
+    background-color:  rgb(255,255,255);
+    height: calc( 100% - (50px + 40px ));   /*100% - (header + footer )*/
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+main {
+    transition: opacity 1s;
+}
+footer{
+    background-color: rgb(255,255,255);
+    height: 40px;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    border-top: 2px solid #ff3726;
+}
+.align-right{
+    float: right;
+}
+.align-left{
+    float: left;
+}
+.button {
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    display: inline-block;
+    background-origin: content-box;
+    position: relative;
+    top: 50%;
+    transform: translateY(-35%);
+    filter: invert(60%);
+}
+.sandwich{
+    background-image: url("../css/img/glyphicons/png/glyphicons-517-menu-hamburger.png");
+    background-size: 70%; /*geht das?*/
+    /*float: left; */
+}
+.plus{
+    background-image: url("../css/img/glyphicons/png/glyphicons-433-plus.png");
+    background-size: 70%;
+    /*float:right;*/
+}
+.thumbnails{
+    background-image: url("../css/img/glyphicons/png/glyphicons-157-show-thumbnails.png");
+    background-size: 70%;
+    /*float: right;*/
+}
+
+.logOut {
+    background-image: url("../css/img/glyphicons/png/glyphicons-388-log-out.png");
+    background-size: 70%;
+    /*float: left*/
+}
+.refresh{
+    background-image: url("../css/img/glyphicons/png/glyphicons-82-refresh.png");
+    background-size: 70%;
+    /*float: right;*/
+}
+.play{
+    background-image: url('../css/img/glyphicons/png/glyphicons-174-play.png');
+    background-size: 15px 15px;
+    height: 15px;
+    width: 15px;
+    float: left;
+    padding: 0px;
+}
+.options {
+    background-image: url('../css/img/glyphicons/png/glyphicons-518-option-vertical.png');
+    height: 13px;
+    width: 10px;
+    padding-top: 0px;
+    background-size: 15%;
+    float: right;
+    margin-right: -9px;
+    padding-top: 15px;
+}
+
+ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    border-top: 15px solid lightgrey;
+}
+li{
+    height: 110px;
+    border-bottom: 2px solid lightgrey;
+    padding-left: 10px;
+}
+.listcontent{  /*Inhalt der einzelnen Medien, lorempix play options title*/
+    background-color: white;
+    height: 90px;
+    float: left;
+    margin-top: 10px;
+}
+.list-box{ /*lorempix datum*/
+    font-weight: lighter;
+    font-size: 10pt;
+    color: darkgray;
+    height: 25px;
+}
+.list-inside{   /*titel*/
+    font-weight: bold;
+    font-size: 12pt;
+    height: 30px;
+    display: flex;
+    align-items: center; /*align vertikal*/
+}
+.li-cont-bottom{ /*play options*/
+    padding-top: 3px;
+    height: 25px;
+}
+.tag{
+    line-height: 0px;
+    color: darkgray;
+    margin-top: 7px;
+    float: left;
+    padding-left: 20px;
+}
+.img{          /*Bilder innerhalb von Listenelementen*/
+    height: 60px;
+    width: 60px;
+    margin: 10px;
+   /* background-origin: content-box;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-size: 60px 60px;
+    background-size: cover;*/
+}
+/*Kachelansicht*/
+.tiles li {
+    /*display: inline-block;*/
+    position: relative;
+    border-bottom: 0px;
+    float: left;
+}
+.tiles .main .mainarea{
+    text-align: center;
+}
+.tiles ul {
+    display: inline-block;
+}
+.tiles ul li {
+    display: inline-block;
+    margin: 4px;
+    padding: 0px;
+    float: left;
+    font-style: 0pt;
+    border-bottom: none;
+    position: relative;
+    min-width: 120px;
+    height: 110px;
+    line-height:100%;
+}
+.tiles .listcontent .list-box{
+    display: none;
+    float: left;
+}
+.tiles .listcontent .list-inside{
+    display: none;
+}
+.tiles .listcontent .li-cont-bottom .play{
+    display: none;
+}
+.tiles .options {
+    background-image: url("./img/glyphicons/png/glyphicons-518-option-vertical.png");
+    background-size: 25%;
+    filter: invert(100%);
+    position: absolute;
+    left: +90px;
+    top: +90px;
+}
+.tiles img {
+    height: 110px;
+    width: 110px;
+    display: inline-block;
+    position: absolute;
+}
+.tiles .thumbnails {
+    background-image: url("./img/glyphicons/png/glyphicons-115-list.png");
+}
+.faded{
+    opacity: 0.0;
+    transition: opacity 2s;
+}
+
+/*
+.tiles div{
+    font-size: 0px;
+}
+.tiles span :not(imgbutton).interactbutton{
+    display: none;
+}
+.tiles .play {
+    display:none;
+}
+.tiles li{
+    padding-right: 18px;
+}
+.tiles#opt .img{
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    position: absolute;  /*Positionierung des Bildelements: bezogen auf li*/
+  /*  top: 120px;
+    bottom: 0;
+    left: 60px;
+    right: 0;
+    height: auto;
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+}
+.tiles li:before{
+ content: "";
+ display: block;
+ padding-top: 100%;  /*entscheidend für Kachel Lösung*/
+/*}
+
+/*fading*/
+/*main{
+    opacity: 1.0;
+    trasition: opacity 1s;
+}
+.faded{
+    opacity: 0.0;
+    transition: opacity 1s; /*Attribute werden über einen Zeitraum angepasst*/
+/*}
+
+
+.imgbutton {
+    background-size: 20px 20px;
+    font-size: 0px;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    filter: invert(50%);
+}
+.interactbutton {
+    font-size: 12px;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    filter: invert(50%);
+    line-height: 12px;
+}
+.title{
+    font-size: 18pt;
+    color: black;
+}
+*/
+
+/*.imagesource{
+    font-family: "Arial", sans-serif;
+    color: grey;
+    font-size: 10pt;
+    padding-top: 5px;
+    padding-left: 0px;
+    padding-right: 10px;
+}*/

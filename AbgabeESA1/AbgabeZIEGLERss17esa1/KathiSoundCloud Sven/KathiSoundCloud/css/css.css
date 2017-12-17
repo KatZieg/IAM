@@ -1,0 +1,313 @@
+html, body {
+    /*background-color: limegreen;*/
+    background-color: white;
+    margin: 0px;
+    font-family: "Avenir Medium", sans-serif;
+    font-size: 10pt;
+    /*font-weight: lighter;*/
+    color: black;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+header {
+    position: relative;
+    background-color: white;
+    height: 40px;
+    width: 100%;
+    max-width: 100%;
+    /*line-height: 50px;*/
+    border-bottom: 2px solid darkgrey; /* Rand unten */
+    transition: opacity 1s; /* ?? */
+}
+
+header h2 {
+    /*margin-top: 0px;*/
+    font-weight: normal;
+    display: inline-block;
+    /*text-transform: uppercase;*/
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    color: black;
+    float: left;
+}
+
+.mainarea {
+    width: 100%;
+    max-width: 100%;
+    background-color: white;
+    height: calc(100% - (80px));
+    /*height: -webkit-calc(100% - 90px);*/
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+main {
+    transition: opacity 1s;
+}
+
+footer {
+    background-color: white;
+    height: 40px;
+    width: 100%;
+    max-width: 100%;
+    /*line-height: 50px;*/
+    border-top: 2px solid darkorange; /* Rand oben */
+}
+
+/* button */
+.button {
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    display: inline-block;
+    background-origin: content-box;
+    position: relative;
+    top: 50%;
+    transform: translateY(-35%); /* 70%/2 wegen Skalierung der Buttons um 70%*/
+    filter: invert(60%); /* Grau-Färbung */
+}
+
+.btn-hamburger {
+    background-image: url("./img/glyphicons/png/glyphicons-517-menu-hamburger.png");
+    background-size: 70%; /* CSS3 */ /* sieht aber auch OK aus wenn dies ignoriert wird */
+    float: left;
+}
+
+.btn-plus {
+    background-image: url("./img/glyphicons/png/glyphicons-433-plus.png");
+    background-size: 70%; /* CSS3 */ /* sieht aber auch OK aus wenn dies ignoriert wird */
+    float: right;
+}
+
+.btn-tiles {
+    background-image: url("./img/glyphicons/png/glyphicons-157-show-thumbnails.png");
+    background-size: 70%; /* CSS3 */ /* sieht aber auch OK aus wenn dies ignoriert wird */
+    float: right;
+}
+
+.btn-logout {
+    background-image: url("./img/glyphicons/png/glyphicons-388-log-out.png");
+    background-size: 70%; /* CSS3 */ /* sieht aber auch OK aus wenn dies ignoriert wird */
+    float: left;
+}
+
+.btn-refresh {
+    background-image: url("./img/glyphicons/png/glyphicons-82-refresh.png");
+    background-size: 70%; /* CSS3 */ /* sieht aber auch OK aus wenn dies ignoriert wird */
+    float: right;
+}
+
+.btn-play {
+    height: 15px;
+    width: 15px;
+    background-size: 15px 15px;
+    background-image: url("./img/glyphicons/png/glyphicons-174-play.png");
+    background-size: 70%; /* CSS3 */ /* sieht aber auch OK aus wenn dies ignoriert wird */
+    float: left;
+    padding: 0px;
+}
+
+.btn-more {
+    padding-top: 0px;
+    /*filter: invert(60%);*/
+    /*background-size: 6px 20px;*/
+    background-image: url("./img/glyphicons/png/glyphicons-518-option-vertical.png");
+    background-size: 15%; /* CSS3 */ /* sieht aber auch OK aus wenn dies ignoriert wird */
+    float: right;
+    margin-right: -9px;
+    padding-top: 15px;
+}
+
+/* LIST */
+ul {
+    margin: 0px;
+    list-style: none;
+    padding: 0px;
+    border-top: 15px solid lightgrey; /* Rand oben am ul-Element */
+}
+li {
+    height: 110px;
+    /*line-height: 110px;*/
+    /*font-size: 20pt;*/
+    padding-left: 10px;
+    border-bottom: 1px solid darkgrey;
+    /*background-color: limegreen;*/
+}
+
+.li-wrap {
+    background-color: white;
+    width: calc(100% - (90px));
+    /*width: -webkit-calc(100% - 90px);*/
+    height: 90px;
+    float: right;
+    margin-top: 10px;
+}
+
+.li-cont-top{
+    font-weight: lighter;
+    font-size: 10pt;
+    color: darkgray;
+    height: 25px;
+}
+
+.li-cont-middle{
+    font-weight: bold;
+    font-size: 12pt;
+    height: 30px;
+    display: flex;
+    align-items: center; /* align vertical */
+}
+
+.li-cont-bottom{
+    padding-top: 3px;
+    height: 25px;
+}
+
+.toast.shown {
+    background-color: gray;
+    color: white;
+    opacity: 1.0;
+    /*transition-delay: 0s;*/
+    transition: opacity 1s, background-color 1s;
+}
+
+.left{
+    float:left;
+}
+.right{
+    float:right;
+    margin-right: 18px
+}
+
+
+
+.tag-Count {
+    line-height: 0px;
+    color: darkgrey;
+    /*font-size: 60%;*/
+    margin-top: 7px;
+    float: left;
+    padding-left: 20px;
+}
+
+
+
+img {
+    height: 80px;
+    width: 80px;
+    padding-top: 10px;
+    float: left;
+}
+
+
+
+
+
+.kachel li{
+    border-bottom: none;
+    float: left;
+    position: relative;
+}
+
+.kachel .li-wrap{
+    /*display: none;*/
+}
+.kachel .main .mainarea{
+    text-align: center;
+    /*min-width: 390px;*/
+}
+
+kachel ul{
+    display: inline-block;
+}
+
+.kachel ul li{
+    display: inline-block;
+    margin: 4px;
+    padding: 0px;
+    float: left;
+    font-size: 0pt;
+    border-bottom: none;
+}
+
+.kachel ul li{
+    position: relative;
+    width: calc((100% - 18px * 5) / 5);
+    min-width:120px;
+    height: 110px;
+    line-height:100%;
+}
+
+
+.kachel .li-wrap .li-cont-top{
+    display: none;
+}
+
+.kachel .li-wrap .li-cont-middle{
+    display: none;
+}
+.kachel .li-wrap .li-cont-bottom .btn-play{
+    display: none;
+}
+
+
+.kachel .btn-more {
+    background-image: url("./img/glyphicons/png/glyphicons-518-option-vertical.png");
+    background-size: 25%; /* CSS3 */ /* sieht aber auch OK aus wenn dies ignoriert wird */
+    filter: invert(100%);
+    position: absolute;
+    left: +90px;
+    top: +90px;
+    /*background-color: limegreen;*/
+}
+
+.kachel img {
+    height: 110px;
+    width: 110px;
+    display: inline-block;
+    position: absolute;
+}
+
+.kachel .btn-tiles {
+    background-image: url("./img/glyphicons/png/glyphicons-115-list.png");
+}
+
+.ausblenden {
+    opacity: 0.0;
+    transition: opacity 2s;
+}
+
+/* toast */
+
+.toast {
+    width: 60%;
+    position: fixed;
+    text-align: center;
+    bottom: 15%;
+    left: 20%;
+    background-color: white;
+    opacity: 0.0;
+    transition: opacity 0.5s, background-color 0.5s;
+    transition-delay: 0.5s;
+}
+
+.toast.shown {
+    background-color: gray;
+    color: white;
+    opacity: 1.0;
+    /*transition-delay: 0s;*/
+    transition: opacity 1s, background-color 1s;
+
+
+
+
+
+
+
+}

@@ -1,0 +1,286 @@
+html, body {
+    background-color: white;
+    font-weight: normal;
+    margin: 0px;
+    font-family: "Arial", sans-serif;
+    color: black;
+    /*Breite und Höhe 100% und nicht scrollbar */
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+* {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+header{
+    background-color: rgb(255,255,255);
+    height: 50px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 2px solid rgb(190,190,190);
+    box-shadow: 0px 20px 0px lightgrey;
+}
+header h1{
+    margin: 0px;
+    font-weight: normal;
+    font-size: 20pt;
+    padding-top: 0px;
+    padding-left: 50px;
+    margin-right: 10px;
+    line-height: 50px;
+}
+header *{
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.content {
+    background-color:  rgb(255,255,255);
+    height: calc( 100% - (50px + 40px ));   /*100% - (header + footer )*/
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.img{
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    padding-top: 10px;
+    background-origin: content-box;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+}
+main {
+    transition: opacity 1s;
+}
+
+footer{
+    background-color: rgb(255,255,255);
+    height: 40px;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    border-top: 2px solid #ff3726;
+}
+
+.interactbutton {
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    display: inline-block;
+    background-origin: content-box;
+    position: relative;
+    top: 50%;
+    transform: translateY(-35%);
+    filter: invert(60%);
+}
+
+.sandwich {
+    background-image: url("./img/glyphicons/png/glyphicons-517-menu-hamburger.png");
+    background-size: 70%;
+    float: left;
+}
+
+.plus {
+    background-image: url("./img/glyphicons/png/glyphicons-433-plus.png");
+    background-size: 70%;
+    float: right;
+}
+
+.thumbnails {
+    background-image: url("./img/glyphicons/png/glyphicons-157-show-thumbnails.png");
+    background-size: 70%;
+    float: right;
+}
+
+.logout {
+    background-image: url("./img/glyphicons/png/glyphicons-388-log-out.png");
+    background-size: 70%;
+    float: left;
+}
+
+.refresh {
+    background-image: url("./img/glyphicons/png/glyphicons-82-refresh.png");
+    background-size: 70%;
+    float: right;
+}
+
+.play {
+    height: 15px;
+    width: 15px;
+    background-size: 15px 15px;
+    background-image: url("./img/glyphicons/png/glyphicons-174-play.png");
+    background-size: 70%;
+    float: left;
+    padding: 0px;
+}
+
+.options {
+    padding-top: 0px;
+    background-image: url("./img/glyphicons/png/glyphicons-518-option-vertical.png");
+    background-size: 15%;
+    float: right;
+    margin-right: -9px;
+    padding-top: 15px;
+}
+
+ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+li{
+    height: 100px;
+    font-size: 18px;
+    border-bottom: 2px solid lightgrey;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.listBox {
+    background-color: white;
+    width: calc(100% - (90px));
+    height: 90px;
+    float: right;
+    margin-top: 10px;
+}
+
+.imageDates{
+    font-weight: lighter;
+    font-size: 10pt;
+    color: darkgray;
+    height: 25px;
+}
+
+.mediaTitle{
+    font-size: 12pt;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.buttonsBox{
+    padding-top: 3px;
+    height: 25px;
+}
+
+.toast.shown {
+    background-color: gray;
+    color: white;
+    opacity: 1.0;
+    transition: opacity 1s, background-color 1s;
+}
+
+.align-left{
+    float:left;
+}
+.align-right{
+    float:right;
+    margin-right: 18px
+}
+
+.tag {
+    line-height: 0px;
+    color: darkgrey;
+    /*font-size: 60%;*/
+    margin-top: 7px;
+    float: left;
+    padding-left: 20px;
+}
+.tiles li{
+    width: calc((100% - 10px * 8)/4);
+    margin-left: 10px;
+    display: inline-block;
+    border-bottom: none;
+    position: relative;
+}
+.tiles li .img{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    height: 80px;
+    width: 80px;
+}
+.tiles li:before {
+    content: "";
+    display: block;
+    padding-top: 10%;
+}
+.tiles .options{
+    background-repeat: no-repeat;
+    height: 45px;
+    width: 30px;
+    position: absolute;
+    padding-top : 0px;
+    margin-top: 50px;
+    margin-left: -10px;
+}
+.tiles div{
+    font-size: 0px;
+}
+.tiles span :not(imgbutton){
+    display: none;
+}
+.tiles .imagesource{
+    display: none;
+}
+.tiles .title{
+    display: none;
+}
+.tiles .play{
+    display: none;
+}
+.tiles .thumbnails{
+    background-image: url("../css/img/glyphicons/png/glyphicons-115-list.png");
+    padding-top: 10px;
+}
+
+.faded {
+    opacity: 0.0;
+    transition: opacity 2s;
+}
+
+/* toast */
+
+.toast {
+    width: 60%;
+    position: fixed;
+    text-align: center;
+    bottom: 15%;
+    left: 20%;
+    background-color: white;
+    opacity: 0.0;
+    transition: opacity 0.5s, background-color 0.5s;
+    transition-delay: 0.5s;
+}
+
+.toast.shown {
+    background-color: gray;
+    color: white;
+    opacity: 1.0;
+    transition: opacity 1s, background-color 1s;
+
+}
+
+/*media queries*/
+@media (orientation: landscape){
+    .tiles li {
+        width: calc((100% - 10px *6)/6);
+    }
+}
