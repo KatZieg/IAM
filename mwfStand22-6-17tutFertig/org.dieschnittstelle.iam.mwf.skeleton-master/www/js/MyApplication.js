@@ -25,6 +25,8 @@ define(["mwf", "mwfUtils", "EntityManager", "entities", "GenericCRUDImplLocal", 
                     //this.registerCRUD("MyEntity", this.CRUDOPS.REMOTE, GenericCRUDImplRemote.newInstance("MyEntity"));
 
                     // TODO: do any further application specific initialisations here
+                    //NJM1 umschalten zwischen lokalen und remote Datenzugriff
+                    //this.switchCRUD();
                     //lokaler und remote Datenzugriff
                     this.registerEntity("MediaItem", entities.MediaItem, true);
                     this.registerCRUD("MediaItem", this.CRUDOPS.LOCAL, GenericCRUDImplLocal.newInstance("MediaItem"));

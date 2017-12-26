@@ -25,6 +25,17 @@ define(["mwf", "entities"], function (mwf, entities) {
         oncreate(callback) {
             // TODO: do databinding, set listeners, initialise the view
 
+            this.addListener(new mwf.EventMatcher("crud", "created", "MediaItem"), ((event) => {
+                this.addToListview(event.data);
+            }));
+            this.addListener(new mwf.EventMatcher("crud", "updated", "MediaItem"), ((event) => {
+                this.updateInListview(event.data._id, event.data);
+            }));
+            this.addListener(new
+            mwf.EventMatcher("crud", "deleted", "MediaItem"), ((event) => {
+                this.removeFromListview(event.data);
+            })
+            );
             //this.initialiseListview(this.items);
 
             //set Listener to plus icon via id
@@ -62,7 +73,7 @@ define(["mwf", "entities"], function (mwf, entities) {
 
         createNewItem()
         {
-            var newItem = new entities.MediaItem("m", "http://lorempixel.com/350/300");
+            var newItem = new entities.MediaItem("item", "http://placeimg.com/640/480/nature");
             console.log("-------------------------------------------id ist: " + newItem._id);
             this.showDialog("mediaItemDialog", {
                 item: newItem,
@@ -70,7 +81,7 @@ define(["mwf", "entities"], function (mwf, entities) {
                     submitForm: ((event) => {
                         event.original.preventDefault();
                         newItem.create(() => {   //create () auf mediaItem aufrufen!!
-                            this.addToListview(newItem);
+                        //this.addToListview(newItem); Seite 70
                             console.log("-----nach create()--------------------------------------id ist: " + newItem._id);
                         });
                         this.hideDialog();
@@ -85,12 +96,13 @@ define(["mwf", "entities"], function (mwf, entities) {
             //  this.removeFromListview(item._id);
             //});
             item.delete(() => {
-                this.removeFromListview(item._id);
+                //this.removeFromListview(item._id);
             });
         }
 
         editItem(item) {
-            item.name= "Name: " +item.name + item.name;
+            item.name= "name: " + item.name;
+           // item.name= "name: " +item.name + item.name; redundant
             //this.crudops.update(item._id, item, (()=> {
             //   this.updateInListview(item._id, item);
             // }));
@@ -103,7 +115,7 @@ define(["mwf", "entities"], function (mwf, entities) {
                     submitForm: ((event) => {
                         event.original.preventDefault();
                         item.update(() => {
-                            this.updateInListview(item._id, item);
+                            //this.updateInListview(item._id, item);
                         });
                         this.hideDialog();
                     }),

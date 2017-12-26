@@ -21,7 +21,10 @@ define(["mwf", "entities"], function (mwf, entities) {
             this.viewProxy= this.bindElement("mediaReadviewTemplate", {item:mediaItem}, this.root).viewProxy;
             this.viewProxy.bindAction("deleteItem", (()=> {
                 mediaItem.delete(()=> {
-                    this.previousView({deletedItem: mediaItem});
+                    //this.previousView({deletedItem: mediaItem});
+                    this.notifyListeners(new
+                        mwf.Event("crud", "deleted", "MediaItem", mediaItem.__id));
+                    this.previousView();
                 })
             }));
             // call the superclass once creation is done
