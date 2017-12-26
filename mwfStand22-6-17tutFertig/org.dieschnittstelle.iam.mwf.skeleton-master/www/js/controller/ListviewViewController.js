@@ -66,6 +66,20 @@ define(["mwf", "entities"], function (mwf, entities) {
                 }
             });
 
+            //local oder remote Zugriff
+            //jeder ViewController hat auch ein Applikation-Attribut (=Instanz der MyApplication.js)
+            this.root.querySelector("footer .mwf-img-refresh").onclick = () => {
+                alert("switch CRUD " + this.application.currentCRUDScope);
+                if (this.application.currentCRUDScope == "local"){
+                    this.application.switchCRUD("remote");
+                }
+                else{
+                    this.application.switchCRUD("local");
+                }
+                entities.MediaItem.readAll((items)=>{
+                    this.initialiseListview(items);
+                });
+            };
 
             // call the superclass once creation is done
             super.oncreate(callback);
