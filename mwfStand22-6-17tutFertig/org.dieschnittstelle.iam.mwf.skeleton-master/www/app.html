@@ -55,11 +55,13 @@
     </header>
     <div class=mwf-dialog-body">
         <ul class="mwf-list-view" data-mwf-listitem-view="">
-            <li class ="mwf-li-singletitle mwf-menu-item" data-mwf-targetaction="deleteItem">Löschen</li>
+            <li class ="mwf-li-singletitle mwf-menu-item" data-mwf-targetaction="confirmItem">Löschen</li>
             <li class="mwf-li-singletitle mwf-menu-item" data-mwf-targetaction="editItem">Editieren</li>
+            <li class="mwf-li-singletitle mwf-menu-item" data-mwf-targetaction="exitItem">Abbrechen</li>
         </ul>
     </div>
 </div>
+<!--Dialog zum Editieren-->
 <div data-mwf-templatename="mediaItemDialog" data-mwf-viewcontroller="GenericDialogTemplateViewController" class="mwf-view-component mwf-template mwf-databind mwf-dialog mwf-popup">
     <div class="mwf-dialog-body">
         <h2>{{#if item.created}}Medium editieren{{else}}Neues Medium{{/if}}</h2>
@@ -69,8 +71,21 @@
                 <button class="mwf-left-align mwf-button" disabled="{{#unless item.created}}disabled{{/unless}}" type="button" on-click="deleteItem">Löschen</button>
                 <input id="createTagAction" class="mwf-button-prio mwf-right-align mwf-button" type="submit" value="{{#if item.created}}Ändern{{else}}Hinzufügen{{/if}}"/>
             </div>
+
         </form>
     </div>
+</div>
+<!--Dialog zum Löschen-->
+<div data-mwf-templatename="deleteItemDialog" data-mwf-viewcontroller="GenericDialogTemplateViewController" class="mwf-view-component mwf-template mwf-databind mwf-dialog mwf-popup">
+<div class="mwf-dialog-body">
+    <h2>{{item.name}}Wirklich löschen?</h2>
+    <form id="itemDeleteForm" on-submit="submitForm">
+        <div class="mwf-buttonbar">
+            <button class="mwf-left-align mwf-button" type="button" on-click="deleteItem">Löschen</button>
+            <button class="mwf-left-align mwf-button" type="button" on-click="exitItem">Abbrechen</button>
+        </div>
+    </form>
+</div>
 </div>
 <!--Leseansicht-->
 <div class="mwf-view" id="mediaReadview" data-mwf-viewcontroller="ReadviewViewController">

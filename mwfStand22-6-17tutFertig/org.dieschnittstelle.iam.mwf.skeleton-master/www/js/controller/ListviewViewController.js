@@ -111,8 +111,31 @@ define(["mwf", "entities"], function (mwf, entities) {
             //});
             item.delete(() => {
                 //this.removeFromListview(item._id);
+            //this.hideDialog();
             });
         }
+
+        exitItem(){
+            this.hideDialog();
+        }
+
+        confirmItem(item){
+            item.name= item.name + " ";
+            this.showDialog("deleteItemDialog", {
+                item: item,
+                actionBindings: {
+                    exitItem: ((event)=>{
+                        this.exitItem(item);
+                        this.hideDialog();
+                    }),
+                    deleteItem: ((event)=> {
+                        this.deleteItem(item);
+                        this.hideDialog();
+                    })
+                }
+            });
+        }
+
 
         editItem(item) {
             item.name= "name: " + item.name;
