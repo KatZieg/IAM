@@ -46,7 +46,8 @@ define(["mwf", "entities"], function (mwf, entities) {
                 //this.crudops.create(new entities.MediaItem("m"+ Date.now(), "http://lorempixel.com/50/50"), ((created) => {
                 //this.addToListview(created);
                 //}));
-                this.createNewItem();
+                //this.createNewItem();    //--> seid hier keine Bilder mehr dargestellt
+                this.nextView("mediaEditview");
             });
 
             //Befüllen der Listenansicht mit dem Resultat von readAll()
@@ -87,7 +88,7 @@ define(["mwf", "entities"], function (mwf, entities) {
 
         createNewItem()
         {
-            var newItem = new entities.MediaItem("item", "http://placeimg.com/640/480/nature");
+           var newItem = new entities.MediaItem("item", "http://placeimg.com/640/480/nature");
             console.log("-------------------------------------------id ist: " + newItem._id);
             this.showDialog("mediaItemDialog", {
                 item: newItem,
@@ -103,6 +104,7 @@ define(["mwf", "entities"], function (mwf, entities) {
                 }
             });
             console.log("------------ende-------------------------------id ist: " + newItem._id);
+
         }
 
         deleteItem(item) {
@@ -166,10 +168,15 @@ define(["mwf", "entities"], function (mwf, entities) {
         }
 
 
-        onReturnFromSubview(subviewid, returnValue, returnStatus, callback){
-            if (subviewid == "mediaReadview" && returnValue && returnValue.deletedItem){
-                this.removeFromListview(returnValue.deletedItem._id);
-            }
+        onReturnFromSubview(subviewid, returnValue, returnStatus, callback) {
+           /* if (((subviewid == "mediaReadview") || (subviewid == "mediaEditview")) && returnValue && returnValue.deletedItem) {
+                if (returnValue.deletedItem) {
+                    this.removeFromListview(returnValue.deletedItem._id);
+                }
+                else if (returnValue.createdItem) {
+                    this.addToListview(returnValue.createdItem);
+                }
+            }*/
             callback();
         }
 
