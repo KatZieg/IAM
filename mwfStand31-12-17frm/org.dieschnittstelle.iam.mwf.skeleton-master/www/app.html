@@ -27,6 +27,7 @@
 <body data-mwf-application="MyApplication">
 
 <!-- TODO-REPEATED: add new views here , scharfschalten-->
+<!--Listenansicht-->
 <div class="mwf-view mwf-view-initial" id = "mediaOverview" data-mwf-viewcontroller="ListviewViewController">
         <header>
             <div class="mwf-imgbutton mwf-img-sandwich mwf-left-align" id="resetDatabase"></div>
@@ -56,7 +57,7 @@
     <div class=mwf-dialog-body">
         <ul class="mwf-list-view" data-mwf-listitem-view="">
             <li class ="mwf-li-singletitle mwf-menu-item" data-mwf-targetaction="confirmItem">Löschen</li>
-            <li class="mwf-li-singletitle mwf-menu-item" data-mwf-targetaction="editItem">Editieren</li>
+            <li class="mwf-li-singletitle mwf-menu-item" data-mwf-targetview="mediaEditview">Editieren</li>
             <li class="mwf-li-singletitle mwf-menu-item" data-mwf-targetaction="exitItem">Abbrechen</li>
         </ul>
     </div>
@@ -102,6 +103,36 @@
         <div class="mwf-back mwf-imgbutton mwf-img-backward"></div>
     </footer>
     </div>
+</div>
+<!--Editieransicht mit URL und UPLOAD--FRM-->
+<div class="mwf-view " id= "mediaEditview" data-mwf-viewcontroller="EditviewViewController">
+    <div class="mwf-template mwf-databind" data-mwf-templatename="mediaEditviewTemplate">
+    <header>
+        <button class="mwf-imgbutton mwf-img-sandwich mwf-left-align"></button>
+        <h1>{{#if item.created}}Editieren {{item.name}}{{else}}Neues Item{{/if}}</h1>
+        <input type="submit" form="mediaEditform" class="mwf-imgbutton mwf-img-disk mwf-right-align"></input>
+    </header>
+    <main>
+        <form id="mediaEditform">
+            <fieldset>
+                <legend>URL</legend>
+                <input type="url" name="src" required="required" value="{{item.src}}"/>
+            </fieldset>
+            <fieldset>
+                <legend>Name</legend>
+                <input type="text" name="name" required="required" value="{{item.name}}"/>
+            </fieldset>
+            <fieldset>
+                <legend>Description</legend>
+                <textarea name="description" value="{{item.description}}"></textarea>
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <button class="mwf-imgbutton mwf-img-backward mwf-left-align mwf-back"></button>
+    </footer>
+</div>
+</div>
 </div>
 </body>
 </html>

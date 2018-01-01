@@ -18,28 +18,28 @@
       <file leaf-file-name="app.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/app.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+            <state relative-caret-position="621">
+              <caret line="111" column="42" lean-forward="false" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webserver.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webserver.js">
+      <file leaf-file-name="ViewControllerTemplate.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/controller/ViewControllerTemplate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+            <state relative-caret-position="170">
+              <caret line="10" column="48" lean-forward="false" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="http2mdb.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/njsimpl/http2mdb.js">
+      <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1088">
-              <caret line="64" column="75" lean-forward="false" selection-start-line="64" selection-start-column="71" selection-end-line="64" selection-end-column="75" />
+            <state relative-caret-position="102">
+              <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -65,11 +65,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="EditviewViewController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/controller/EditviewViewController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="33" column="51" lean-forward="false" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ListviewViewController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/controller/ListviewViewController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1445">
-              <caret line="112" column="16" lean-forward="true" selection-start-line="112" selection-start-column="16" selection-end-line="112" selection-end-column="16" />
+            <state relative-caret-position="206">
+              <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -111,14 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>main</find>
-      <find>lorempixel</find>
-      <find>args</find>
-      <find>next</find>
-      <find>nex</find>
-      <find>pix</find>
-      <find>loremp</find>
-      <find>pro</find>
       <find>createNewItem</find>
       <find>des</find>
       <find>scroll</find>
@@ -141,9 +143,21 @@
       <find>mediaItemDialog</find>
       <find>dialog-body</find>
       <find>item.name</find>
+      <find>id=</find>
+      <find>mediaEditview</find>
+      <find>targetview</find>
+      <find>ViewControllerTemplate</find>
+      <find>createdItem</find>
+      <find>target</find>
+      <find>createItem</find>
+      <find>addToListview</find>
     </findStrings>
+    <replaceStrings>
+      <replace>EditviewViewController</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>C:\Users\kathi\WebstormProjects\IAM\mwfStand22-6-17tutFertig\org.dieschnittstelle.iam.mwf.skeleton-master</dir>
+      <dir>C:\Users\kathi\WebstormProjects\IAM\mwfStand31-12-17frm\org.dieschnittstelle.iam.mwf.skeleton-master</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -157,10 +171,11 @@
         <option value="$PROJECT_DIR$/www/lib/js/mwf/mwf.js" />
         <option value="$PROJECT_DIR$/www/js/model/MyEntities.js" />
         <option value="$PROJECT_DIR$/www/css/mystyle.css" />
-        <option value="$PROJECT_DIR$/www/js/Main.js" />
         <option value="$PROJECT_DIR$/www/js/controller/ReadviewViewController.js" />
         <option value="$PROJECT_DIR$/www/js/MyApplication.js" />
         <option value="$PROJECT_DIR$/mdb/mdbdata/db/mongod.lock" />
+        <option value="$PROJECT_DIR$/www/js/Main.js" />
+        <option value="$PROJECT_DIR$/www/js/controller/EditviewViewController.js" />
         <option value="$PROJECT_DIR$/www/app.html" />
         <option value="$PROJECT_DIR$/www/js/controller/ListviewViewController.js" />
       </list>
@@ -186,9 +201,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-11" />
-    <option name="y" value="37" />
-    <option name="width" value="1019" />
+    <option name="x" value="-33" />
+    <option name="y" value="6" />
+    <option name="width" value="936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -244,11 +259,6 @@
             <path>
               <item name="org.dieschnittstelle.iam.mwf.skeleton" type="b2602c69:ProjectViewProjectNode" />
               <item name="org.dieschnittstelle.iam.mwf.skeleton-master" type="462c0819:PsiDirectoryNode" />
-              <item name="njsimpl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="org.dieschnittstelle.iam.mwf.skeleton" type="b2602c69:ProjectViewProjectNode" />
-              <item name="org.dieschnittstelle.iam.mwf.skeleton-master" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -268,7 +278,35 @@
               <item name="org.dieschnittstelle.iam.mwf.skeleton" type="b2602c69:ProjectViewProjectNode" />
               <item name="org.dieschnittstelle.iam.mwf.skeleton-master" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="org.dieschnittstelle.iam.mwf.skeleton" type="b2602c69:ProjectViewProjectNode" />
+              <item name="org.dieschnittstelle.iam.mwf.skeleton-master" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="org.dieschnittstelle.iam.mwf.skeleton" type="b2602c69:ProjectViewProjectNode" />
+              <item name="org.dieschnittstelle.iam.mwf.skeleton-master" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="org.dieschnittstelle.iam.mwf.skeleton" type="b2602c69:ProjectViewProjectNode" />
+              <item name="org.dieschnittstelle.iam.mwf.skeleton-master" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="org.dieschnittstelle.iam.mwf.skeleton" type="b2602c69:ProjectViewProjectNode" />
+              <item name="org.dieschnittstelle.iam.mwf.skeleton-master" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="external" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -282,7 +320,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="node" />
-    <property name="settings.editor.selected.configurable" value="preferences.mongoOptions" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
     <property name="settings.editor.splitter.proportion" value="0.23506366" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -291,6 +329,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kathi\WebstormProjects\IAM\mwfStand31-12-17frm\org.dieschnittstelle.iam.mwf.skeleton-master\www\js\controller" />
       <recent name="K:\IAM\MWF\org.dieschnittstelle.iam.mwf.skeleton-master\www\js\controller" />
     </key>
   </component>
@@ -432,27 +471,30 @@
       <workItem from="1514727472429" duration="76000" />
       <workItem from="1514727589703" duration="44000" />
       <workItem from="1514729990648" duration="1797000" />
+      <workItem from="1514740122692" duration="916000" />
+      <workItem from="1514801119696" duration="201000" />
+      <workItem from="1514801345201" duration="9607000" />
+      <workItem from="1514822046160" duration="1962000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114169000" />
+    <option name="totallyTimeSpent" value="126855000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="37" width="1019" height="1056" extended-state="0" />
-    <editor active="true" />
+    <frame x="-33" y="6" width="936" height="1056" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.015952144" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.020652173" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.118268214" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10031679" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.016949153" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.018478261" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -506,13 +548,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/lib/css/mwfIcons.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/lib/css/normalize.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -553,13 +588,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webserver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/webserver.js" />
     <entry file="file://$PROJECT_DIR$/www/js/Main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -582,13 +611,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webserver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/webserver.js" />
     <entry file="file://$PROJECT_DIR$/www/js/Main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -611,13 +634,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webserver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/webserver.js" />
     <entry file="file://$PROJECT_DIR$/www/js/Main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -746,13 +763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controller/ViewControllerTemplate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/lib/css/mwf.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
@@ -778,13 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2516">
           <caret line="152" column="17" lean-forward="false" selection-start-line="152" selection-start-column="17" selection-end-line="152" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/Main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -816,14 +819,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mdb/mdbdata/db/WiredTiger.lock" />
     <entry file="file://$PROJECT_DIR$/mdb/mdbdata/db/mongod.lock" />
-    <entry file="file://$PROJECT_DIR$/webserver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/webserver.js" />
     <entry file="file://$PROJECT_DIR$/www/js/controller/ReadviewViewController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -839,14 +835,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/njsimpl/http2mdb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="64" column="75" lean-forward="false" selection-start-line="64" selection-start-column="71" selection-end-line="64" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/njsimpl/http2mdb.js" />
     <entry file="file://$PROJECT_DIR$/www/lib/js/mwf/crud/mwfEntityManager.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3570">
@@ -855,18 +844,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controller/ViewControllerTemplate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="48" lean-forward="false" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/app.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        <state relative-caret-position="621">
+          <caret line="111" column="42" lean-forward="false" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controller/EditviewViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="33" column="51" lean-forward="false" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controller/ListviewViewController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="112" column="16" lean-forward="true" selection-start-line="112" selection-start-column="16" selection-end-line="112" selection-end-column="16" />
+        <state relative-caret-position="206">
+          <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
           <folding />
         </state>
       </provider>
