@@ -27,6 +27,8 @@ define(["mwf", "entities"], function (mwf, entities) {
                     this.previousView();
                 })
             }));
+            //pencil zur Editieransicht
+
             // call the superclass once creation is done
             super.oncreate(callback);
         }

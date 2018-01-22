@@ -28,29 +28,69 @@ define(["mwf", "entities"], function (mwf, entities) {
 
             //bidirektionales Databinding, eingegebene Daten anzeigen, interne Daten anzeigen ->ractive!!
             this.bindElement("mediaEditviewTemplate", {item:this.mediaItem}, this.root); //root=div an welches drangehängt werden soll
-            this.root.querySelector("#mediaEditform"), onsubmit=()=>{
+
+            this.editForm = this.root.querySelector("#mediaEditform");
+            this.editForm.onsubmit=()=>{
                 //alert("submit" + JSON.stringify(this.mediaItem));
 
-                //falls mediaItem noch nicht created ist ein Update durchführen
-                //@created: prüft auf positive oder negative id
-                if(this.mediaItem.created){
-                    this.mediaItem.update(()=>{
-                        this.previousView({updatedItem:this.mediaItem});
-                    });
+                var upload = true;
+
+                if(upload){
+
+                    var filedata = this.editForm.srcfile.files[0];
+                    //alert("upload!" + filedata);
+
+                    var formdata = new FormData();
+                    formdata.append("srcfile", filedata);
+                    var xhr = new XMLHttpRequest();  //aus JS Daten an Server übermitteln
+                    xhr.open("POST", "api/upload");
+                    xhr.send(formdata);   //Bild senden von Client an Server
+                    xhr.onreadystatechange = ()=>{  //Response verarbeiten
+                        if(xhr.readyState == 4){  //JSON Objekt auslesen
+                            if (xhr.status ==200){
+                                //alert("xhr response text " + xhr.responseText);
+                                var responsedata = JSON.parse(xhr.responseText);
+                                var uploadedDataUrl = responsedata.data.srcfile;
+                                //alert("srcfile"+ uploadedDataUrl);
+                                this.mediaItem.src = uploadedDataUrl;
+                                this.createOrUpdateMediaItem();
+                            }
+                            else{
+                                alert("Error");
+                            }
+
+                        }
+                    }
                 }
                 else{
-                    this.mediaItem.create(()=>{   //ansonsten erstellen und hinzufügen
-                        this.previousView({createdItem:this.mediaItem});
-                    });
+                    this.createOrUpdateMediaItem();
                 }
+
                 // this.mediaItem.create(()=>{
                 //     this.previousView({createdItem:this.mediaItem}); //neue Item wird der Listenansicht hinzugefügt
                 // });
                 return false;
                 }
 
+
             // call the superclass once creation is done
             super.oncreate(callback);
+        }
+
+        createOrUpdateMediaItem(){
+            //falls mediaItem noch nicht created ist ein Update durchführen
+            //@created: prüft auf positive oder negative id
+            alert("createOrUploadMediaItem" + JSON.stringify(this.mediaItem));
+            if(this.mediaItem.created){
+                this.mediaItem.update(()=>{
+                    this.previousView({updatedItem:this.mediaItem});
+                });
+            }
+            else{
+                this.mediaItem.create(()=>{   //ansonsten erstellen und hinzufügen
+                    this.previousView({createdItem:this.mediaItem});
+                });
+            }
         }
 
         /*

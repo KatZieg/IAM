@@ -95,9 +95,11 @@
         <div class="mwf-imgbutton mwf-img-sandwich mwf-left-align" ></div>
         <h2>{{item.name}}</h2>
         <div class="mwf-imgbutton mwf-img-delete mwf-right-align" on-click="deleteItem"></div>
+        <div class="mwf-imgbutton mwf-img-pencil mwf-right-align" id ="changetoEditview"></div><!--funktioniert nicht-->
     </header>
     <main class="mwf-scrollview">
         <img src="{{item.src}}"/>
+        <div>{{item.description}}</div>
     </main>
     <footer>
         <div class="mwf-back mwf-imgbutton mwf-img-backward"></div>
@@ -110,27 +112,29 @@
     <header>
         <button class="mwf-imgbutton mwf-img-sandwich mwf-left-align"></button>
         <h1>{{#if item.created}}Editieren {{item.name}}{{else}}Neues Item{{/if}}</h1>
+        <div class="mwf-imgbutton mwf-img-delete mwf-right-align" on-click="deleteItem"></div><!--funktioniert nicht-->
         <input type="submit" form="mediaEditform" class="mwf-imgbutton mwf-img-disk mwf-right-align"></input>
     </header>
     <main>
         <form id="mediaEditform">
             <fieldset>
                 <legend>URL</legend>
-                <input type="url" name="src" required="required" value="{{item.src}}"/>
-            </fieldset>
-            <fieldset>
-                <legend>Name</legend>
-                <input type="text" name="name" required="required" value="{{item.name}}"/>
-            </fieldset>
-            <fieldset>
-                <legend>Description</legend>
-                <textarea name="description" value="{{item.description}}"></textarea>
-            </fieldset>
-        </form>
-    </main>
-    <footer>
-        <button class="mwf-imgbutton mwf-img-backward mwf-left-align mwf-back"></button>
-    </footer>
+               <!--<input type="url" name="src" required="required" value="{{item.src}}"/>-->
+                <input type="file" name="srcfile" required="required" accept="image/*, video/*"/>
+           </fieldset>
+           <fieldset>
+               <legend>Name</legend>
+               <input type="text" name="name" required="required" value="{{item.name}}"/>
+           </fieldset>
+           <fieldset>
+               <legend>Description</legend>
+               <textarea name="description" value="{{item.description}}"></textarea>
+           </fieldset>
+       </form>
+   </main>
+   <footer>
+       <button class="mwf-imgbutton mwf-img-backward mwf-left-align mwf-back"></button>
+   </footer>
 </div>
 </div>
 </div>

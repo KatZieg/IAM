@@ -50,6 +50,7 @@ define(["mwf", "entities"], function (mwf, entities) {
                 this.nextView("mediaEditview");
             });
 
+
             //Befüllen der Listenansicht mit dem Resultat von readAll()
             //alle CRUD Ops auf indexedDB werden asynchron ausgeführt und erfordern callback für das Ergebnis
             //this.crudops.readAll((items)=> {
