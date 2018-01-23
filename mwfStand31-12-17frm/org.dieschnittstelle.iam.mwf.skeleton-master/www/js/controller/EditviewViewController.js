@@ -27,7 +27,8 @@ define(["mwf", "entities"], function (mwf, entities) {
 
 
             //bidirektionales Databinding, eingegebene Daten anzeigen, interne Daten anzeigen ->ractive!!
-            this.bindElement("mediaEditviewTemplate", {item:this.mediaItem}, this.root); //root=div an welches drangehängt werden soll
+            this.viewProxy=this.bindElement("mediaEditviewTemplate", {item:this.mediaItem}, this.root).viewProxy; //root=div an welches drangehängt werden soll
+            //viewProxy ist wie eine Fernsteuerung für die View
 
             this.editForm = this.root.querySelector("#mediaEditform");
             this.editForm.onsubmit=()=>{
@@ -78,30 +79,45 @@ define(["mwf", "entities"], function (mwf, entities) {
 
                 //Upload Vorschau
                 this.editForm.srcfile.onchange=()=>{
-                    var imgfile=this.editForm.srcfile.files[0];
+                    var mediafile=this.editForm.srcfile.files[0];
 
                     //object url
-                    // var objectUrl= URL.createObjectURL(imgfile);
-                    // //alert("file selected" + imgfile + "url " + objectUrl);
-                    // preview.src=objectUrl;
+                    var objectUrl= URL.createObjectURL(mediafile);
+                    //alert("file selected" + mediafile + "url " + objectUrl + "type " + mediafile.type);
+
+                    this.mediaItem.contentType= mediafile.type;
+                    this.viewProxy.update({item: this.mediaItem});
+                    preview= this.root.querySelector("main .preview"); //Element auslesen aus main
+
+                    preview.src=objectUrl;
 
                     //data url: 64bit String binär Problem: riesig -> Browser wird langsamer, so groß wie Daten selbst
-                    var reader = new FileReader();
-                    reader.readAsDataURL(imgfile);
-                    reader.onload=()=>{
-                        var dataurl = reader.result;
-                        console.log("dataurl" + dataurl);
-                        preview.src = dataurl;
-                    }
+                   //data url nicht für Video nehmen!!
+                   //  var reader = new FileReader();
+                   //  reader.readAsDataURL(imgfile);
+                   //  reader.onload=()=>{
+                   //      var dataurl = reader.result;
+                   //      console.log("dataurl" + dataurl);
+                   //      preview.src = dataurl;
+                   //  }
                 }
             // call the superclass once creation is done
             super.oncreate(callback);
         }
 
+        //Methode des Lebenszyklus, Zugriff auf den Moment wenn die Editieransicht verlassen wird
+        onpause(callback){
+            var preview = this.root.querySelector("video");
+            if (preview){
+                preview.pause();
+            }
+            super.onpause(callback);
+        }
+
         createOrUpdateMediaItem(){
             //falls mediaItem noch nicht created ist ein Update durchführen
             //@created: prüft auf positive oder negative id
-            alert("createOrUploadMediaItem" + JSON.stringify(this.mediaItem));
+            //alert("createOrUploadMediaItem" + JSON.stringify(this.mediaItem));
             if(this.mediaItem.created){
                 this.mediaItem.update(()=>{
                     this.previousView({updatedItem:this.mediaItem});

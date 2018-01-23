@@ -36,7 +36,7 @@ define(["mwfUtils", "EntityManager"], function (mwfUtils, EntityManager) {
         get addedDateString(){
             return (new Date(this.added)).toLocaleDateString();
         }
-
+        //Unterscheidung zwischen Video und Bild
         get mediaType(){
             if (this.contentType){
                 var index=this.contentType.indexOf("/");

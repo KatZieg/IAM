@@ -50,6 +50,7 @@
         <button class="mwf-imgbutton mwf-img-refresh mwf-right-align"></button>
     </footer>
 </div>
+
 <div data-mwf-templatename="mediaItemMenu" class=" mwf-listitem-menu mwf-template mwf-databind mwf-dialog mwf-popup">
     <header>
         <h2 class="mwf-dyncontent">{{name}}{{_id}}</h2>
@@ -62,6 +63,7 @@
         </ul>
     </div>
 </div>
+
 <!--Dialog zum Editieren-->
 <div data-mwf-templatename="mediaItemDialog" data-mwf-viewcontroller="GenericDialogTemplateViewController" class="mwf-view-component mwf-template mwf-databind mwf-dialog mwf-popup">
     <div class="mwf-dialog-body">
@@ -76,6 +78,7 @@
         </form>
     </div>
 </div>
+
 <!--Dialog zum Löschen-->
 <div data-mwf-templatename="deleteItemDialog" data-mwf-viewcontroller="GenericDialogTemplateViewController" class="mwf-view-component mwf-template mwf-databind mwf-dialog mwf-popup">
 <div class="mwf-dialog-body">
@@ -88,6 +91,7 @@
     </form>
 </div>
 </div>
+
 <!--Leseansicht-->
 <div class="mwf-view" id="mediaReadview" data-mwf-viewcontroller="ReadviewViewController">
     <div class="mwf-template mwf-databind " data-mwf-templatename="mediaReadviewTemplate">
@@ -106,6 +110,7 @@
     </footer>
     </div>
 </div>
+
 <!--Editieransicht mit URL und UPLOAD--FRM-->
 <div class="mwf-view " id= "mediaEditview" data-mwf-viewcontroller="EditviewViewController">
     <div class="mwf-template mwf-databind" data-mwf-templatename="mediaEditviewTemplate">
@@ -115,7 +120,7 @@
         <div class="mwf-imgbutton mwf-img-delete mwf-right-align" on-click="deleteItem"></div><!--funktioniert nicht-->
         <input type="submit" form="mediaEditform" class="mwf-imgbutton mwf-img-disk mwf-right-align"></input>
     </header>
-    <main>
+    <main class ="mwf-scrollview">
         <form id="mediaEditform">
             <fieldset class="mwf-radiogroup">
                 <input type="radio" id ="srcTypeUrl" name = "{{item.srcType}}" value = "url"/>
@@ -124,14 +129,18 @@
                 <label for="srcTypeUpload">Upload</label>
             </fieldset>
             <fieldset>
+                {{#if item.srcType != 'upload'}}  <!--URL Beschriftung der legend wird ausgeblendet-->
                 <legend>URL</legend>
-                <input type="url" name="src" hidden="{{item.srcType == 'upload'}}" required="{{item.srcType != 'upload'}}" value="{{item.src}}"/>
-                <input type="file" name="srcfile" required="{{item.srcType=='upload'}}" hidden="{{item.srcType != 'upload'}} " accept="image/*, video/*"/>
+                {{/if}}
+                <input pattern = "http://.*|https://.*|content/.*" name="src" hidden="{{item.srcType == 'upload'}}" required="{{item.srcType != 'upload'}}" value="{{item.src}}"/>
+                <input type="file" name="srcfile" hidden="{{item.srcType != 'upload'}}" required="{{item.srcType =='upload'}}" accept="image/*, video/*"/>
            </fieldset>
+            {{#if item.mediaType == 'video'}}
             <!--Vorschaubild-->
-
-            <img src="{{#if item.created}}{{item.src}}{{else}}{{/if}}" alt=""/><!--ractive databinding-->
-
+            <video autoplay="autoplay" controls="contorls" class ="preview" src="{{#if item.created}}{{item.src}}{{else}}{{/if}}" alt=""></video><!--ractive databinding-->
+            {{else}}
+            <img class ="preview" src="{{#if item.created}}{{item.src}}{{else}}{{/if}}" alt=""/>
+            {{/if}}
            <fieldset>
                <legend>Name</legend>
                <input type="text" name="name" required="required" value="{{item.name}}"/>

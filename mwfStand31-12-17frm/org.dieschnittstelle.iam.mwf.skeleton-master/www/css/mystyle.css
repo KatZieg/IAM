@@ -3,3 +3,7 @@
     width: 100%;
     max-width: 100%;
 }
+
+#mediaEditview main video{
+    width: 100%
+}
