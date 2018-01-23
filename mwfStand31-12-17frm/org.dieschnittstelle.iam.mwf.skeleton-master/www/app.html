@@ -117,11 +117,21 @@
     </header>
     <main>
         <form id="mediaEditform">
+            <fieldset class="mwf-radiogroup">
+                <input type="radio" id ="srcTypeUrl" name = "{{item.srcType}}" value = "url"/>
+                <label for="srcTypeUrl">URL</label>
+                <input type="radio" id ="srcTypeUpload" name = "{{item.srcType}}" value ="upload"/>
+                <label for="srcTypeUpload">Upload</label>
+            </fieldset>
             <fieldset>
                 <legend>URL</legend>
-               <!--<input type="url" name="src" required="required" value="{{item.src}}"/>-->
-                <input type="file" name="srcfile" required="required" accept="image/*, video/*"/>
+                <input type="url" name="src" hidden="{{item.srcType == 'upload'}}" required="{{item.srcType != 'upload'}}" value="{{item.src}}"/>
+                <input type="file" name="srcfile" required="{{item.srcType=='upload'}}" hidden="{{item.srcType != 'upload'}} " accept="image/*, video/*"/>
            </fieldset>
+            <!--Vorschaubild-->
+
+            <img src="{{#if item.created}}{{item.src}}{{else}}{{/if}}" alt=""/><!--ractive databinding-->
+
            <fieldset>
                <legend>Name</legend>
                <input type="text" name="name" required="required" value="{{item.name}}"/>

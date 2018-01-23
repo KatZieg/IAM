@@ -32,10 +32,7 @@ define(["mwf", "entities"], function (mwf, entities) {
             this.editForm = this.root.querySelector("#mediaEditform");
             this.editForm.onsubmit=()=>{
                 //alert("submit" + JSON.stringify(this.mediaItem));
-
-                var upload = true;
-
-                if(upload){
+                if(this.mediaItem.srcType == 'upload'){
 
                     var filedata = this.editForm.srcfile.files[0];
                     //alert("upload!" + filedata);
@@ -71,8 +68,32 @@ define(["mwf", "entities"], function (mwf, entities) {
                 // });
                 return false;
                 }
+                //Vorschaubild in Editieransicht
+                //URL Vorschau
+                var preview= this.root.querySelector("main img");
 
+                this.editForm.src.onblur=()=>{
+                    preview.src= this.mediaItem.src;
+                }
 
+                //Upload Vorschau
+                this.editForm.srcfile.onchange=()=>{
+                    var imgfile=this.editForm.srcfile.files[0];
+
+                    //object url
+                    // var objectUrl= URL.createObjectURL(imgfile);
+                    // //alert("file selected" + imgfile + "url " + objectUrl);
+                    // preview.src=objectUrl;
+
+                    //data url: 64bit String binär Problem: riesig -> Browser wird langsamer, so groß wie Daten selbst
+                    var reader = new FileReader();
+                    reader.readAsDataURL(imgfile);
+                    reader.onload=()=>{
+                        var dataurl = reader.result;
+                        console.log("dataurl" + dataurl);
+                        preview.src = dataurl;
+                    }
+                }
             // call the superclass once creation is done
             super.oncreate(callback);
         }
