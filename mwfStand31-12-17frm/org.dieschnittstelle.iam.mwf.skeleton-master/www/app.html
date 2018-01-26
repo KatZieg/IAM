@@ -29,15 +29,19 @@
 <!-- TODO-REPEATED: add new views here , scharfschalten-->
 <!--Listenansicht-->
 <div class="mwf-view mwf-view-initial" id = "mediaOverview" data-mwf-viewcontroller="ListviewViewController">
-        <header>
-            <div class="mwf-imgbutton mwf-img-sandwich mwf-left-align" id="resetDatabase"></div>
-            <h2 class="mwf-left-align">Medien</h2>
-            <div class="mwf-imgbutton mwf-img-plus mwf-right-align" id="addNewMediaItem"></div>
-        </header>
+    <header>
+        <div class="mwf-imgbutton mwf-img-sandwich mwf-left-align" id="resetDatabase"></div>
+        <h2 class="mwf-left-align">Medien</h2>
+        <div class="mwf-imgbutton mwf-img-plus mwf-right-align" id="addNewMediaItem"></div>
+    </header>
     <main class="mwf-scrollview">
         <ul class="mwf-listview" data-mwf-listitem-view="myapp-listitem" data-mwf-listitem-menu="mediaItemMenu">  <!--data ist das Template, es wird hier ausgeschnitten und hintereinander eingefügt-->
             <li class="mwf-listitem  mwf-li-title-subtitle mwf-template mwf-databind" data-mwf-templatename="myapp-listitem" data-mwf-targetview="mediaReadview">
+               {{#if item.mediaType == 'video'}}
+                <div class="mwf-imgbutton mwf-img-play mwf-left-align"></div>
+                {{else}}
                 <img class="mwf-left-align" src="{{src}}"/>
+                {{/if}}
                 <div class="mwf-li-titleblock ">
                     <h2>{{name}}{{_id}}</h2>
                     <h3>{{addedDateString}}</h3>
@@ -45,12 +49,13 @@
                 <div class="mwf-imgbutton mwf-img-options-vertical mwf-right-align mwf-listitem-menu-control "></div>
             </li>
         </ul>
-</main>
+    </main>
     <footer>
         <button class="mwf-imgbutton mwf-img-refresh mwf-right-align"></button>
     </footer>
 </div>
 
+<!--Options Menu -jedes Listenelement hat eigenes dreiteiliges Menü-->
 <div data-mwf-templatename="mediaItemMenu" class=" mwf-listitem-menu mwf-template mwf-databind mwf-dialog mwf-popup">
     <header>
         <h2 class="mwf-dyncontent">{{name}}{{_id}}</h2>
@@ -64,23 +69,24 @@
     </div>
 </div>
 
-<!--Dialog zum Editieren-->
-<div data-mwf-templatename="mediaItemDialog" data-mwf-viewcontroller="GenericDialogTemplateViewController" class="mwf-view-component mwf-template mwf-databind mwf-dialog mwf-popup">
+<!--Dialog zum Editieren- in Leseansicht auf pencil klicken-->
+<div data-mwf-templatename="editItemDialog" data-mwf-viewcontroller="GenericDialogTemplateViewController" class="mwf-view-component mwf-template mwf-databind mwf-dialog mwf-popup">
     <div class="mwf-dialog-body">
-        <h2>{{#if item.created}}Medium editieren{{else}}Neues Medium{{/if}}</h2>
+    <main>
+        <h2 class="mwf-left-align">Medium editieren</h2>
         <form id="itemEditForm" on-submit="submitForm">
-            <input name="name" autocomplete="off" class="mwf-autofocus" type="text" placeholder="Name" required="required" value="{{item.name}}"/>
+            <input name="name" class="mwf-autofocus" type="text" placeholder="Name" required="required" value="{{item.name}}"/>
             <div class="mwf-buttonbar">
-                <button class="mwf-left-align mwf-button" disabled="{{#unless item.created}}disabled{{/unless}}" type="button" on-click="deleteItem">Löschen</button>
-                <input id="createTagAction" class="mwf-button-prio mwf-right-align mwf-button" type="submit" value="{{#if item.created}}Ändern{{else}}Hinzufügen{{/if}}"/>
+                <button class="mwf-left-align mwf-button" type="button" on-click="exitItem">Abbrechen</button>
+                <input id="createTagAction" class="mwf-button-prio mwf-right-align mwf-button" type="submit" value="Ändern"/>
             </div>
-
         </form>
+    </main>
     </div>
 </div>
 
-<!--Dialog zum Löschen-->
-<div data-mwf-templatename="deleteItemDialog" data-mwf-viewcontroller="GenericDialogTemplateViewController" class="mwf-view-component mwf-template mwf-databind mwf-dialog mwf-popup">
+<!--Dialog zum Löschen- Wirklich löschen oder abbrechen-->
+<div data-mwf-templatename="deleteItemDialog" data-mwf-viewcontroller="GenericDialogTemplateViewController" class="mwf-view-component mwf-template mwf-databind mwf-dialog mwf-popup ">
 <div class="mwf-dialog-body">
     <h2>{{item.name}}Wirklich löschen?</h2>
     <form id="itemDeleteForm" on-submit="submitForm">
@@ -98,11 +104,15 @@
     <header>
         <div class="mwf-imgbutton mwf-img-sandwich mwf-left-align" ></div>
         <h2>{{item.name}}</h2>
+        <div class="mwf-imgbutton mwf-img-pencil mwf-right-align" on-click="editItem"></div>
         <div class="mwf-imgbutton mwf-img-delete mwf-right-align" on-click="deleteItem"></div>
-        <div class="mwf-imgbutton mwf-img-pencil mwf-right-align" id ="changetoEditview"></div><!--funktioniert nicht-->
     </header>
     <main class="mwf-scrollview">
+        {{#if item.mediaType == 'video'}}
+        <video autoplay="autoplay" controls="contorls" class ="preview" src="{{#if item.created}}{{item.src}}{{else}}{{/if}}" alt=""></video>
+        {{else}}
         <img src="{{item.src}}"/>
+        {{/if}}
         <div>{{item.description}}</div>
     </main>
     <footer>
@@ -111,13 +121,15 @@
     </div>
 </div>
 
-<!--Editieransicht mit URL und UPLOAD--FRM-->
+<!--Editieransicht mit URL und UPLOAD-Klick auf Plus-FRM-->
 <div class="mwf-view " id= "mediaEditview" data-mwf-viewcontroller="EditviewViewController">
     <div class="mwf-template mwf-databind" data-mwf-templatename="mediaEditviewTemplate">
     <header>
         <button class="mwf-imgbutton mwf-img-sandwich mwf-left-align"></button>
         <h1>{{#if item.created}}Editieren {{item.name}}{{else}}Neues Item{{/if}}</h1>
-        <div class="mwf-imgbutton mwf-img-delete mwf-right-align" on-click="deleteItem"></div><!--funktioniert nicht-->
+        {{#if item.created}}
+        <div class="mwf-imgbutton mwf-img-delete mwf-right-align" on-click="deleteItem"></div>
+        {{/if}}
         <input type="submit" form="mediaEditform" class="mwf-imgbutton mwf-img-disk mwf-right-align"></input>
     </header>
     <main class ="mwf-scrollview">

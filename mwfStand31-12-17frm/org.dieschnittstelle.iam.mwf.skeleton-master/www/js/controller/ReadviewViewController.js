@@ -27,11 +27,32 @@ define(["mwf", "entities"], function (mwf, entities) {
                     this.previousView();
                 })
             }));
-            //pencil zur Editieransicht
 
             // call the superclass once creation is done
             super.oncreate(callback);
         }
+
+        editItem(item) {
+            alert("edit");
+            this.showDialog("editItemDialog", {
+                item: item,
+                actionBindings: {
+                    submitForm: ((event) => {
+                        event.original.preventDefault();
+                        item.update(() => {
+                            this.updateInListview(item._id, item);
+                        });
+                        this.hideDialog();
+                    }),
+                    exitItem: ((event)=>{
+                        this.exitItem(item);
+                        this.hideDialog();
+                    })
+                }
+            });
+
+        }
+
 
         /*
          * for views with listviews: bind a list item to an item view
@@ -66,6 +87,8 @@ define(["mwf", "entities"], function (mwf, entities) {
             super.bindDialog(dialogid, dialog, item);
 
             // TODO: implement action bindings for dialog, accessing dialog.root
+
+
         }
 
 

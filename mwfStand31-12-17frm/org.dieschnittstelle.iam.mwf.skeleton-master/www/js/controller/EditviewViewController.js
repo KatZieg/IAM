@@ -24,12 +24,19 @@ define(["mwf", "entities"], function (mwf, entities) {
             }else{
                 this.mediaItem = new entities.MediaItem();
             }
-
-
+            var mediaItem = this.mediaItem;
             //bidirektionales Databinding, eingegebene Daten anzeigen, interne Daten anzeigen ->ractive!!
             this.viewProxy=this.bindElement("mediaEditviewTemplate", {item:this.mediaItem}, this.root).viewProxy; //root=div an welches drangehängt werden soll
             //viewProxy ist wie eine Fernsteuerung für die View
 
+            this.viewProxy.bindAction("deleteItem", (()=> {
+                mediaItem.delete(()=> {
+                    //this.previousView({deletedItem: mediaItem});
+                    this.notifyListeners(new
+                    mwf.Event("crud", "deleted", "MediaItem", mediaItem.__id));
+                    this.previousView();
+                })
+            }));
             this.editForm = this.root.querySelector("#mediaEditform");
             this.editForm.onsubmit=()=>{
                 //alert("submit" + JSON.stringify(this.mediaItem));

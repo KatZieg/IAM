@@ -23,7 +23,7 @@ define(["mwf", "entities"], function (mwf, entities) {
          * for any view: initialise the view
          */
         oncreate(callback) {
-            // TODO: do databinding, set listeners, initialise the view
+            // TODO: do databinding, set  listeners, initialise the view
 
             this.addListener(new mwf.EventMatcher("crud", "created", "MediaItem"), ((event) => {
                 //this.addToListview(event.data);
@@ -138,34 +138,34 @@ define(["mwf", "entities"], function (mwf, entities) {
             });
         }
 
-
         editItem(item) {
-            item.name= "name: " + item.name;
-           // item.name= "name: " +item.name + item.name; redundant
+            // item.name= "name: " + item.name;
+            // item.name= "name: " +item.name + item.name; redundant
             //this.crudops.update(item._id, item, (()=> {
             //   this.updateInListview(item._id, item);
             // }));
-            item.update(() => {
-                this.updateInListview(item._id, item);
-            });
-            this.showDialog("mediaItemDialog", {
+            // item.update(() => {
+            //     this.updateInListview(item._id, item);
+            // });
+            this.showDialog("editItemDialog", {
                 item: item,
                 actionBindings: {
                     submitForm: ((event) => {
                         event.original.preventDefault();
                         item.update(() => {
-                            //this.updateInListview(item._id, item);
+                            this.updateInListview(item._id, item);
                         });
                         this.hideDialog();
                     }),
-                    deleteItem: ((event)=> {
-                        this.deleteItem(item);
+                    exitItem: ((event)=>{
+                        this.exitItem(item);
                         this.hideDialog();
                     })
                 }
             });
 
         }
+
 
 
         onReturnFromSubview(subviewid, returnValue, returnStatus, callback){
