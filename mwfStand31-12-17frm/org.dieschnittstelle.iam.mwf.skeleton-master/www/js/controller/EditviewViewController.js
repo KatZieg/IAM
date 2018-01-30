@@ -37,6 +37,7 @@ define(["mwf", "entities"], function (mwf, entities) {
                     this.previousView();
                 })
             }));
+
             this.editForm = this.root.querySelector("#mediaEditform");
             this.editForm.onsubmit=()=>{
                 //alert("submit" + JSON.stringify(this.mediaItem));
@@ -71,16 +72,13 @@ define(["mwf", "entities"], function (mwf, entities) {
                     this.createOrUpdateMediaItem();
                 }
 
-                // this.mediaItem.create(()=>{
-                //     this.previousView({createdItem:this.mediaItem}); //neue Item wird der Listenansicht hinzugefügt
-                // });
                 return false;
                 }
                 //Vorschaubild in Editieransicht
                 //URL Vorschau
                 var preview= this.root.querySelector("main img");
 
-                this.editForm.src.onblur=()=>{
+                this.editForm.src.onblur=()=>{   //onblur = Gegenteil von onfocus
                     preview.src= this.mediaItem.src;
                 }
 
@@ -108,6 +106,8 @@ define(["mwf", "entities"], function (mwf, entities) {
                    //      preview.src = dataurl;
                    //  }
                 }
+
+
             // call the superclass once creation is done
             super.oncreate(callback);
         }
@@ -136,6 +136,7 @@ define(["mwf", "entities"], function (mwf, entities) {
                 });
             }
         }
+
 
         /*
          * for views with listviews: bind a list item to an item view

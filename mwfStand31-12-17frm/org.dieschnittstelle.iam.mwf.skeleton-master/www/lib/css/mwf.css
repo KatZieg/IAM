@@ -728,7 +728,7 @@ body.mwf-loading-app {
     text-overflow: ellipsis;
 }
 
-.mwf-view header h2.mwf-dyncontent  {
+.mwf-view header h2.mwf-dyncontent, .mwf-view header h2.mwf-dyncontent  {
     max-width: 50%;
 }
 

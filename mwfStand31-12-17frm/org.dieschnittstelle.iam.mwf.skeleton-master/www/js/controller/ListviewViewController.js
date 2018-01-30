@@ -166,8 +166,6 @@ define(["mwf", "entities"], function (mwf, entities) {
 
         }
 
-
-
         onReturnFromSubview(subviewid, returnValue, returnStatus, callback){
             if (((subviewid == "mediaReadview") || (subviewid == "mediaEditview")) && returnValue ){
                 if(returnValue.deletedItem){

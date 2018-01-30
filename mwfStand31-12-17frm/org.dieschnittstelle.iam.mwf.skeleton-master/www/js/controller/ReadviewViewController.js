@@ -17,8 +17,13 @@ define(["mwf", "entities"], function (mwf, entities) {
         oncreate(callback) {
             // TODO: do databinding, set listeners, initialise the view
 
+            this.addListener(new mwf.EventMatcher("crud", "updated", "MediaItem"), ((event) => {
+                this.updateInListview(event.data._id, event.data);
+            }));
+
             var mediaItem= this.args.item; //new entities.MediaItem("m", "http://lorempixel.com/300/500");
             this.viewProxy= this.bindElement("mediaReadviewTemplate", {item:mediaItem}, this.root).viewProxy;
+
             this.viewProxy.bindAction("deleteItem", (()=> {
                 mediaItem.delete(()=> {
                     //this.previousView({deletedItem: mediaItem});
@@ -28,32 +33,35 @@ define(["mwf", "entities"], function (mwf, entities) {
                 })
             }));
 
+            this.root.querySelector("#changeToEditview").onclick= () =>{
+                this.nextView("mediaEditview", {item:mediaItem});
+                //update auf viewProxy aufrufen
+            }
             // call the superclass once creation is done
             super.oncreate(callback);
         }
-
-        editItem(item) {
-            alert("edit");
-            this.showDialog("editItemDialog", {
-                item: item,
-                actionBindings: {
-                    submitForm: ((event) => {
-                        event.original.preventDefault();
-                        item.update(() => {
-                            this.updateInListview(item._id, item);
-                        });
-                        this.hideDialog();
-                    }),
-                    exitItem: ((event)=>{
-                        this.exitItem(item);
-                        this.hideDialog();
-                    })
-                }
-            });
-
+        //Methode des Lebenszyklus, Zugriff auf den Moment wenn die Leseansicht verlassen wird
+        onpause(callback){
+            var preview = this.root.querySelector("video");
+            if (preview){
+                preview.pause();
+            }
+            super.onpause(callback);
         }
 
+        /*onReturnFromSubview(subviewid, returnValue, returnStatus, callback){
+            if ((subviewid == "mediaEditview") && returnValue ){
+                if(returnValue.deletedItem){
+                    this.removeFromListview(returnValue.deletedItem._id);
+                }
+                else if (returnValue.updatedItem){
+                    this.updateInListview(returnValue.updatedItem._id, returnValue.updatedItem);
+                    callback();
+                }
 
+            }
+
+        }*/
         /*
          * for views with listviews: bind a list item to an item view
          * TODO: delete if no listview is used or if databinding uses ractive templates
