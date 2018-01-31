@@ -17,9 +17,15 @@ define(["mwf", "entities"], function (mwf, entities) {
         oncreate(callback) {
             // TODO: do databinding, set listeners, initialise the view
 
-            this.addListener(new mwf.EventMatcher("crud", "updated", "MediaItem"), ((event) => {
-                this.updateInListview(event.data._id, event.data);
-            }));
+           /* this.addListener(new mwf.EventMatcher("crud", "updated", "MediaItem"), ((event) => {
+                this.viewProxy.update({updatedItem: this.mediaItem});
+            }));*/
+            /*this.addListener(new
+                mwf.EventMatcher("crud", "deleted", "MediaItem"), ((event) => {
+                    this.previousView({deletedItem:this.mediaItem});
+                })
+            );*/
+
 
             var mediaItem= this.args.item; //new entities.MediaItem("m", "http://lorempixel.com/300/500");
             this.viewProxy= this.bindElement("mediaReadviewTemplate", {item:mediaItem}, this.root).viewProxy;
